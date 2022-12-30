@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('service_types', function (Blueprint $table) {
             $table->id();
-            $table->string("desc_buy", 50);
-            $table->integer("qtd_itens");
+            $table->string("service_type_desc");
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('buy');
+        Schema::dropIfExists('service_types');
     }
 };
