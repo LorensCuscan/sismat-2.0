@@ -23,7 +23,34 @@ class FleetResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Card::make()
+                ->schema([
+                    Forms\Components\TextInput::make('company_id')
+                        ->label('Identificação da empresa')
+                        ->required()
+                        ->columns(1),
+
+                    Forms\Components\TextInput::make('desc_frota')
+                        ->label('Descrição da frota')
+                        ->required()
+                        ->columns(1),
+
+                    Forms\Components\TextInput::make('active')
+                        ->label('Ativo?')
+                        ->required()
+                        ->columns(1),
+
+                    Forms\Components\TextInput::make('hystory')
+                        ->label('Historico')
+                        ->columns(1),
+
+                    Forms\Components\TextInput::make('dt_manut')
+                        ->label('Data da manutenção')                       
+                        ->columns(1),
+
+
+                ])
+                ->columns(2),
             ]);
     }
 
