@@ -34,7 +34,7 @@ class ServiceResource extends Resource
                             ->required()
                             ->columns(1),
 
-                        Forms\Components\DatePicker::make('service_type_id')
+                        Forms\Components\TextInput::make('service_type_id')
                             ->numeric()
                             ->label('Numero do tipo de serviço')
                             ->required()

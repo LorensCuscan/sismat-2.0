@@ -23,7 +23,10 @@ class ServiceTypeResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('service_type_desc')
+                ->label('Descrição do tipo de serviço')
+                ->required()
+                ->columns(1),
             ]);
     }
 
