@@ -46,13 +46,10 @@ class CompanyResource extends Resource
                         ->columns(1),
 
                     Forms\Components\TextInput::make('postal_code')
-                        ->label('Codigo Postal')                       
+                        ->label('CEP:')                       
                         ->columns(1),
-
-
                 ])
                 ->columns(2),
-
             ]);
     }
 

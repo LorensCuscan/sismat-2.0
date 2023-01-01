@@ -23,7 +23,20 @@ class OrderResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Card::make()
+                    ->schema([
+                        Forms\Components\TextInput::make('desc_buy')
+                            ->label('Descrição da compra')
+                            ->required()
+                            ->columnSpan(2),
+
+                        Forms\Components\TextInput::make('items_quantity')
+                            ->numeric()
+                            ->label('Quantidade de itens')
+                            ->required()
+                            ->columns(1),
+                    ])
+                    ->columns(2)
             ]);
     }
 

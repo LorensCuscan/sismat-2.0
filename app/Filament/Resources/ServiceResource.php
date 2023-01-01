@@ -23,7 +23,37 @@ class ServiceResource extends Resource
     {
         return $form
             ->schema([
-                //
+                        Forms\Components\TextInput::make('fleet_id')
+                            ->numeric()
+                            ->label('Identificação da rota')
+                            ->required()
+                            ->columns(1),
+
+                        Forms\Components\TextInput::make('service_desc')
+                            ->label('Identificação do serviço')
+                            ->required()
+                            ->columns(1),
+
+                        Forms\Components\DatePicker::make('service_type_id')
+                            ->numeric()
+                            ->label('Numero do tipo de serviço')
+                            ->required()
+                            ->columns(1),
+
+                        Forms\Components\TextInput::make('maintenance_type_id')
+                            ->numeric()
+                            ->label('Numero do tipo de manutenção')
+                            ->columns(1),
+
+                        Forms\Components\TextInput::make('fleet_id')
+                        
+                            ->label('Identificação da frota')
+                            ->required()
+                            ->columns(1),
+                        
+                        Forms\Components\TextInput::make('maintenance_type_id')
+                            ->label('Tipo da manutenção')
+                            ->columns(1),
             ]);
     }
 

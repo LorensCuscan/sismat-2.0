@@ -30,21 +30,21 @@ class FleetResource extends Resource
                         ->required()
                         ->columns(1),
 
-                    Forms\Components\TextInput::make('desc_frota')
+                    Forms\Components\TextInput::make('desc_frota')->helperText('Carros, caminhões etc...')
                         ->label('Descrição da frota')
                         ->required()
-                        ->columns(1),
+                        ->columnspan(2),
 
-                    Forms\Components\TextInput::make('active')
-                        ->label('Ativo?')
-                        ->required()
-                        ->columns(1),
+                    Forms\Components\Radio::make('active')
+                        ->label('Frota em atividade?')
+                        ->boolean('Sim', 'Não')
+                        ->columns(),
 
                     Forms\Components\TextInput::make('hystory')
                         ->label('Historico')
                         ->columns(1),
 
-                    Forms\Components\TextInput::make('dt_manut')
+                    Forms\Components\DatePicker::make('dt_manut')
                         ->label('Data da manutenção')                       
                         ->columns(1),
 

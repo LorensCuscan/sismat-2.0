@@ -23,7 +23,13 @@ class MaintenanceTypeResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Card::make()
+                    ->schema([
+                        Forms\Components\RichEditor::make('desc_manut')
+                            ->label('Descrição da manutenção')
+                            ->required()
+                    ])
+                    ->columns(2),
             ]);
     }
 

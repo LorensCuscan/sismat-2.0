@@ -23,7 +23,44 @@ class ServiceOrderResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Card::make()
+                    ->schema([
+                        Forms\Components\DatePicker::make('order_date')
+                            ->label('Data da compra')
+                            ->required()
+                            ->columns(1),
+
+                        Forms\Components\TextInput::make('service_id')
+                            ->required()
+                            ->numeric()
+                            ->label('Identificação do serviço')
+                            ->required()
+                            ->columns(1),
+
+                        Forms\Components\DatePicker::make('delivery_date')
+                            ->label('Data da entrega')
+                            ->required()
+                            ->columns(1),
+
+                        Forms\Components\TextInput::make('order_id')
+                            ->numeric()
+                            ->label('Identificação do pedido')
+                            ->columns(1),
+
+                        Forms\Components\TextInput::make('fleet_id')
+                        
+                            ->label('Identificação da frota')
+                            ->required()
+                            ->columns(1),
+                        
+                        Forms\Components\TextInput::make('maintenance_type_id')
+                            ->label('Tipo da manutenção')
+                            ->columns(1),
+                        
+                            
+
+                    ])
+                    ->columns(2),
             ]);
     }
 
