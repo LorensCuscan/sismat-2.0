@@ -26,13 +26,18 @@ class CompanyResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                 ->schema([
-                    Forms\Components\TextInput::make('name')
+                    Forms\Components\TextInput::make('company_name')
                         ->label('Nome da empresa')
                         ->required()
                         ->columns(1),
 
                     Forms\Components\TextInput::make('segment')
                         ->label('Segmento')
+                        ->required()
+                        ->columns(1),
+
+                    Forms\Components\TextInput::make('address')
+                        ->label('Endereço')
                         ->required()
                         ->columns(1),
 
@@ -43,7 +48,7 @@ class CompanyResource extends Resource
 
                     Forms\Components\TextInput::make('state')
                         ->label('Estado')
-                        ->columns(1),
+                        ->columns(2),
 
                     Forms\Components\TextInput::make('postal_code')
                         ->label('CEP:')                       
@@ -73,7 +78,7 @@ class CompanyResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            
         ];
     }
     

@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\Relationship;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ServiceOrderResource extends Resource
@@ -30,11 +31,9 @@ class ServiceOrderResource extends Resource
                             ->required()
                             ->columns(1),
 
-                        Forms\Components\TextInput::make('service_id')
-                            ->required()
-                            ->numeric()
+                        Forms\Components\Select::make('service_id')
+                            ->relationship('service', 'id')
                             ->label('Identificação do serviço')
-                            ->required()
                             ->columns(1),
 
                         Forms\Components\DatePicker::make('delivery_date')
@@ -42,18 +41,19 @@ class ServiceOrderResource extends Resource
                             ->required()
                             ->columns(1),
 
-                        Forms\Components\TextInput::make('order_id')
-                            ->numeric()
+                        Forms\Components\Select::make('order_id')
+                            ->relationship('order', 'id')
                             ->label('Identificação do pedido')
                             ->columns(1),
 
-                        Forms\Components\TextInput::make('fleet_id')
-                        
+                        Forms\Components\Select::make('fleet_id')
+                            ->relationship('fleet', 'id')
                             ->label('Identificação da frota')
                             ->required()
                             ->columns(1),
                         
-                        Forms\Components\TextInput::make('maintenance_type_id')
+                        Forms\Components\Select::make('maintenance_type_id')
+                            ->relationship('maintenance_type', 'id')
                             ->label('Tipo da manutenção')
                             ->columns(1),
                         

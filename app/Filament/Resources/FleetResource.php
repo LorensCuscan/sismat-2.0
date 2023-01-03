@@ -25,12 +25,19 @@ class FleetResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                 ->schema([
-                    Forms\Components\TextInput::make('company_id')
+
+                    Forms\Components\TextInput::make('fleet_id')
+                        ->label('Frota Num:')
+                        ->numeric(),                 
+                        
+                    Forms\Components\Select::make('company_id')
+                        ->relationship('company', 'id')
                         ->label('Identificação da empresa')
                         ->required()
                         ->columns(1),
 
-                    Forms\Components\TextInput::make('desc_frota')->helperText('Carros, caminhões etc...')
+                    Forms\Components\TextInput::make('desc_frota')
+                        ->helperText('Carros, caminhões etc...')
                         ->label('Descrição da frota')
                         ->required()
                         ->columnspan(2),

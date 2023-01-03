@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class ServiceType extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'service_types_id',
+        'service_type_desc'
+    ];
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 }

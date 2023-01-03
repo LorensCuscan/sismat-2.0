@@ -25,6 +25,11 @@ class OrderResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                     ->schema([
+                        Forms\Components\TextInput::make('order_id')
+                            ->label('Numero do pedido:')
+                            ->required()
+                            ->columnSpan(2),
+
                         Forms\Components\TextInput::make('desc_buy')
                             ->label('Descrição da compra')
                             ->required()
