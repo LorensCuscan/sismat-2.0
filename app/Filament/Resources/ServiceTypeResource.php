@@ -23,10 +23,17 @@ class ServiceTypeResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('service_type_desc')
-                ->label('Descrição do tipo de serviço')
+                Forms\Components\TextInput::make('service_types_id')
+                ->label('Codigo do serviço')
                 ->required()
                 ->columns(1),
+
+                Forms\Components\TextInput::make('service_type_desc')
+                ->label('Descrição do serviço')
+                ->required()
+                ->columns(1),
+
+                
             ]);
     }
 
@@ -34,7 +41,8 @@ class ServiceTypeResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('service_type_desc')
+                ->label('Descrição do tipo de serviço'),
             ])
             ->filters([
                 //
@@ -50,7 +58,7 @@ class ServiceTypeResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+    //
         ];
     }
     

@@ -62,7 +62,8 @@ class CompanyResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('company_name')->label('Empresas'),
+                Tables\Columns\TextColumn::make('segment')->label('Segmento'),
             ])
             ->filters([
                 //

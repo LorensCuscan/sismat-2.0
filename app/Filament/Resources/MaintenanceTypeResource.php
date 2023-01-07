@@ -25,19 +25,20 @@ class MaintenanceTypeResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                     ->schema([
-                        Forms\Components\RichEditor::make('desc_manut')
+                        Forms\Components\Textarea::make('desc_manut')
                             ->label('Descrição da manutenção')
                             ->required()
-                    ])
-                    ->columns(2),
-            ]);
+                        ])
+                        ->columns(2),
+                    ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('desc_manut')
+                ->label('Descrição da Manutenção'),
             ])
             ->filters([
                 //

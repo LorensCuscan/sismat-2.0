@@ -51,7 +51,14 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('fleet_id')
+                ->label('Numero da frota'),    
+                Tables\Columns\TextColumn::make('service_desc')
+                ->label('Identificação do serviço'),
+                Tables\Columns\TextColumn::make('service_type_id')
+                ->label('Numero do tipo de serviço'),      
+                Tables\Columns\TextColumn::make('maintenance_type_id')
+                ->label('Código da manutenção'),
             ])
             ->filters([
                 //

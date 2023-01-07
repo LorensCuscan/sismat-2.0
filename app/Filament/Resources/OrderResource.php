@@ -34,7 +34,6 @@ class OrderResource extends Resource
                             ->label('Descrição da compra')
                             ->required()
                             ->columnSpan(2),
-
                         Forms\Components\TextInput::make('items_quantity')
                             ->numeric()
                             ->label('Quantidade de itens')
@@ -49,7 +48,12 @@ class OrderResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')
+                ->label('Numero do pedido'),    
+                Tables\Columns\TextColumn::make('desc_buy')
+                ->label('Descrição da compra'),        
+                Tables\Columns\TextColumn::make('items_quantity')
+                ->label('Quantidade de itens'),             
             ])
             ->filters([
                 //

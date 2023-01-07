@@ -68,7 +68,14 @@ class ServiceOrderResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('service_id')
+                ->label('Código do pedido'),    
+                Tables\Columns\TextColumn::make('order_date')
+                ->label('Data da compra'),    
+                Tables\Columns\TextColumn::make('delivery_date')
+                ->label('Data da entrega'),        
+                Tables\Columns\TextColumn::make('maintenance_type_id')
+                ->label('Código da manutenção'),    
             ])
             ->filters([
                 //

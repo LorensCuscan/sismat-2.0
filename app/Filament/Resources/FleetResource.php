@@ -27,9 +27,8 @@ class FleetResource extends Resource
                 ->schema([
 
                     Forms\Components\TextInput::make('fleet_id')
-                        ->label('Frota Num:')
-                        ->numeric(),                 
-                        
+                        ->label('Frota Num:'),
+                                                              
                     Forms\Components\Select::make('company_id')
                         ->relationship('company', 'id')
                         ->label('Identificação da empresa')
@@ -65,7 +64,11 @@ class FleetResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('desc_frota')
+                ->label('Descrição da frota'),
+                Tables\Columns\TextColumn::make('company.company_name') 
+                            
+                ->label('Identificação da empresa'),
             ])
             ->filters([
                 //
