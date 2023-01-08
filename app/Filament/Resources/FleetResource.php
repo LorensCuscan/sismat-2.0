@@ -19,7 +19,7 @@ class FleetResource extends Resource
 
     protected static ?string $navigationLabel = 'Frotas';
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-truck';
 
     public static function form(Form $form): Form
     {
@@ -27,9 +27,6 @@ class FleetResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                 ->schema([
-
-                    Forms\Components\TextInput::make('fleet_id')
-                        ->label('Frota Num:'),
                                                               
                     Forms\Components\Select::make('company_id')
                         ->relationship('company', 'id')

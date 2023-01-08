@@ -20,7 +20,7 @@ class ServiceOrderResource extends Resource
 
     protected static ?string $navigationLabel = 'Detalhes de compra';
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
     public static function form(Form $form): Form
     {

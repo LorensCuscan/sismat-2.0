@@ -13,6 +13,8 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+
+
 class MaintenanceTypeResource extends Resource
 {
     protected static ?string $model = MaintenanceType::class;

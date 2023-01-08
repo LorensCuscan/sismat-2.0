@@ -19,16 +19,12 @@ class ServiceTypeResource extends Resource
 
     protected static ?string $navigationLabel = 'Tipos de serviço';
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-document-search';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('service_types_id')
-                ->label('Codigo do serviço')
-                ->required()
-                ->columns(1),
 
                 Forms\Components\TextInput::make('service_type_desc')
                 ->label('Descrição do serviço')
