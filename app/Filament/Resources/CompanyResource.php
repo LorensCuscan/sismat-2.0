@@ -23,6 +23,8 @@ class CompanyResource extends Resource
 
     protected static ?string $navigationLabel = 'Empresas';
 
+    protected static ?string $modelLabel = 'Empresas';
+
     protected static ?string $navigationIcon = 'heroicon-o-office-building';
 
     

@@ -19,6 +19,8 @@ class ServiceTypeResource extends Resource
 
     protected static ?string $navigationLabel = 'Tipos de serviço';
 
+    protected static ?string $modelLabel = 'Tipos de serviço';
+
     protected static ?string $navigationIcon = 'heroicon-o-document-search';
 
     public static function form(Form $form): Form

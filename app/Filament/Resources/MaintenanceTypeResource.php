@@ -21,6 +21,8 @@ class MaintenanceTypeResource extends Resource
 
     protected static ?string $navigationLabel = 'Tipos de manutenção';
 
+    protected static ?string $modelLabel = 'Manutenção, Tipo';
+
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form

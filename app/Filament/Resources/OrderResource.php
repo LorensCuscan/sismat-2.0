@@ -19,6 +19,8 @@ class OrderResource extends Resource
 
     protected static ?string $navigationLabel = 'Compras';
 
+    protected static ?string $modelLabel = 'Compras';
+
     protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
 
     public static function form(Form $form): Form

@@ -172,6 +172,8 @@ return [
 
     'dark_mode' => true,
 
+    
+
     /*
     |--------------------------------------------------------------------------
     | Database notifications
@@ -329,6 +331,8 @@ return [
             DispatchServingFilamentEvent::class,
             MirrorConfigToSubpackages::class,
         ],
+        
     ],
+    
 
 ];

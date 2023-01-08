@@ -19,6 +19,8 @@ class FleetResource extends Resource
 
     protected static ?string $navigationLabel = 'Frotas';
 
+    protected static ?string $modelLabel = 'Frotas';
+
     protected static ?string $navigationIcon = 'heroicon-o-truck';
 
     public static function form(Form $form): Form
