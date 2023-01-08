@@ -46,9 +46,7 @@ class OrderResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('id')
-                ->label('Numero do pedido'),    
+            ->columns([  
                 Tables\Columns\TextColumn::make('desc_buy')
                 ->label('Descrição da compra'),        
                 Tables\Columns\TextColumn::make('items_quantity')

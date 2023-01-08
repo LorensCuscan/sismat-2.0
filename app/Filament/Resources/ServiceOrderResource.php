@@ -36,6 +36,7 @@ class ServiceOrderResource extends Resource
                             ->columns(1),
 
                         Forms\Components\Select::make('service_id')
+                            ->required()
                             ->relationship('service', 'id')
                             ->label('Identificação do serviço')
                             ->columns(1),
@@ -46,18 +47,20 @@ class ServiceOrderResource extends Resource
                             ->columns(1),
 
                         Forms\Components\Select::make('order_id')
+                            ->required('null')
                             ->relationship('order', 'id')
                             ->label('Identificação do pedido')
                             ->columns(1),
 
                         Forms\Components\Select::make('fleet_id')
-                            ->relationship('fleet', 'id')
+                            ->relationship('fleet', 'desc_frota')
                             ->label('Identificação da frota')
                             ->required()
                             ->columns(1),
                         
                         Forms\Components\Select::make('maintenance_type_id')
-                            ->relationship('maintenance_type', 'id')
+                            ->relationship('maintenance_type', 'desc_manut')
+                            ->required()
                             ->label('Tipo da manutenção')
                             ->columns(1),
                         
@@ -71,9 +74,7 @@ class ServiceOrderResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('service_id')
-                ->label('Código do pedido'),    
+            ->columns([  
                 Tables\Columns\TextColumn::make('order_date')
                 ->label('Data da compra'),    
                 Tables\Columns\TextColumn::make('delivery_date')

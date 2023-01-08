@@ -53,6 +53,7 @@ class ServiceResource extends Resource
                             ->columns(1),
 
                         Forms\Components\Select::make('maintenance_type_id')
+                            ->required()
                             ->relationship('maintenance_type', 'id')
                             ->label('Tipo de manutenção')
                             ->columns(1),

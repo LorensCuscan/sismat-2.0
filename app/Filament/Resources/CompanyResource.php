@@ -57,10 +57,12 @@ class CompanyResource extends Resource
 
                     Forms\Components\TextInput::make('state')
                         ->label('Estado')
+                        ->required()
                         ->columns(2),
 
                     Forms\Components\TextInput::make('postal_code')
-                        ->label('CEP:')                       
+                        ->label('CEP:')     
+                        ->required()                  
                         ->columns(1),
                 ])
                 ->columns(2),
