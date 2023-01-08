@@ -18,6 +18,8 @@ class ServiceOrderResource extends Resource
 {
     protected static ?string $model = ServiceOrder::class;
 
+    protected static ?string $navigationLabel = 'Detalhes de compra';
+
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form

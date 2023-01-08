@@ -17,6 +17,8 @@ class FleetResource extends Resource
 {
     protected static ?string $model = Fleet::class;
 
+    protected static ?string $navigationLabel = 'Frotas';
+
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
