@@ -79,7 +79,7 @@ class ServiceOrderResource extends Resource
                 ->label('Data da compra'),    
                 Tables\Columns\TextColumn::make('delivery_date')
                 ->label('Data da entrega'),        
-                Tables\Columns\TextColumn::make('maintenance_type_id')
+                Tables\Columns\TextColumn::make('maintenance_type.desc_manut')
                 ->label('Código da manutenção'),    
             ])
             ->filters([

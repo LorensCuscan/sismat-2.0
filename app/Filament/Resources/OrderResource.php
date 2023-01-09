@@ -37,7 +37,7 @@ class OrderResource extends Resource
                             ->numeric()
                             ->label('Quantidade de itens')
                             ->required()
-                            ->columns(1),
+                            ->columnSpan(2),
                     ])
                     ->columns(2)
             ]);

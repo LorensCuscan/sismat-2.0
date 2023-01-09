@@ -35,28 +35,23 @@ class ServiceResource extends Resource
     {
         return $form
             ->schema([
-                        Forms\Components\Select::make('fleet_id')
-                            ->relationship('fleet', 'id')
-                            ->label('Identificação da frota')
+                        Forms\Components\Select::make('fleets_id')
+                            ->relationship('fleet', 'desc_frota')
+                            ->label('Tipo da frota')
                             ->required()
                             ->columns(1),
 
-                        Forms\Components\TextInput::make('service_desc')
-                            ->label('Identificação do serviço')
-                            ->required()
-                            ->columns(1),
-
-                        Forms\Components\Select::make('service_type_id')
-                            ->relationship('service_type', 'id')
-                            ->label('Numero do tipo de serviço')
+                        Forms\Components\Select::make('service_types_id')
+                            ->relationship('service_type', 'service_type_desc')
+                            ->label('Tipo do serviço')
                             ->required()
                             ->columns(1),
 
                         Forms\Components\Select::make('maintenance_type_id')
                             ->required()
-                            ->relationship('maintenance_type', 'id')
+                            ->relationship('maintenance_type', 'desc_manut')
                             ->label('Tipo de manutenção')
-                            ->columns(1),
+                            ->columnSpan(2),
             ]);
     }
 
@@ -64,14 +59,12 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('fleet_id')
-                ->label('Numero da frota'),    
-                Tables\Columns\TextColumn::make('service_desc')
-                ->label('Identificação do serviço'),
-                Tables\Columns\TextColumn::make('service_type_id')
-                ->label('Numero do tipo de serviço'),      
-                Tables\Columns\TextColumn::make('maintenance_type_id')
-                ->label('Código da manutenção'),
+                Tables\Columns\TextColumn::make('fleet.desc_frota')
+                ->label('Descrição da frota'),    
+                Tables\Columns\TextColumn::make('service_type.service_type_desc')
+                ->label('Decrição do serviço'),      
+                Tables\Columns\TextColumn::make('maintenance_type.desc_manut')
+                ->label('Descrição da manutenção'),
             ])
             ->filters([
                 //
